@@ -16,7 +16,7 @@ def create_app():
         app,
         origins=Config.CORS_ORIGINS,
         supports_credentials=True,
-        allow_headers=["Content-Type"],
+        allow_headers=["Content-Type", "X-CSRFToken"],
     )
 
     from . import hooks, routes

@@ -2,7 +2,7 @@ from flask import Blueprint, request
 
 from .controllers import auth, classificador
 
-bp = Blueprint("index", __name__, url_prefix="")
+bp = Blueprint("index", __name__, url_prefix="/api/v1")
 
 
 @bp.get("/")
@@ -25,6 +25,6 @@ def register_blueprints(app):
     """
     Registre todos os blueprints aqui
     """
+    bp.register_blueprint(auth.bp)
+    bp.register_blueprint(classificador.bp)
     app.register_blueprint(bp)
-    app.register_blueprint(auth.bp)
-    app.register_blueprint(classificador.bp)
