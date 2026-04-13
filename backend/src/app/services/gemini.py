@@ -136,9 +136,7 @@ class GeminiService:
                         type=genai.types.Type.OBJECT,
                         required=["codigo", "descricao", "permitido_mei"],
                         properties={
-                            "codigo": genai.types.Schema(
-                                type=genai.types.Type.STRING
-                            ),
+                            "codigo": genai.types.Schema(type=genai.types.Type.STRING),
                             "descricao": genai.types.Schema(
                                 type=genai.types.Type.STRING
                             ),
