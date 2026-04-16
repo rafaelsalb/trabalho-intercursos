@@ -1,7 +1,7 @@
 from flask import Blueprint, jsonify, request
 
 from app.prompts import ClassificadorPrompts
-from app.schemas.classificador import ClassificadorFormRequestSchema
+from app.schemas.classificador import AnalisePerfil, ClassificadorFormRequestSchema
 from app.services import GeminiService
 
 bp = Blueprint("classificador", __name__, url_prefix="/classificador")
@@ -17,5 +17,9 @@ def classificar():
 
     prompt: str = ClassificadorPrompts.classificar(data)
 
-    resultado: str = GeminiService.generate(prompt)
+    resultado: dict = GeminiService.generate(prompt)
+
+    schema = AnalisePerfil()
+    schema.validate(resultado)
+
     return jsonify(resultado)

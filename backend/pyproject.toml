@@ -34,5 +34,8 @@ default_install_hook_types = ["pre-commit"]
 [tool.black]
 line-length = 88
 
+[tool.flake8]
+max-line-length = 88
+
 [tool.isort]
 profile = "black"

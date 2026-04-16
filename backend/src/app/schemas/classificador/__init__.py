@@ -1,3 +1,3 @@
-from .form_request import ClassificadorFormRequestSchema
+from .form_request import AnalisePerfil, ClassificadorFormRequestSchema
 
-__all__ = ["ClassificadorFormRequestSchema"]
+__all__ = ["AnalisePerfil", "ClassificadorFormRequestSchema"]
